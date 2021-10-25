@@ -12,6 +12,12 @@
 ], 'root') should return 9
 */
 
-function countVeg() {}
+function countVeg(vegList, vegType) {
+  let count = 0;
+  for (let i in vegList) {
+    if (vegList[i].type === vegType) count += vegList[i].quantity;
+  }
+  return count;
+}
 
 module.exports = countVeg;

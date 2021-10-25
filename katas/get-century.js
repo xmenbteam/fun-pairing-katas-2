@@ -6,6 +6,9 @@
   It should work up to and including the year 10,000 (the '101st' century)
 */
 
-function getCentury() {}
+function getCentury(year) {
+  if (year.toString().length < 3) return "1st";
+  // if (year.length === 4)
+}
 
 module.exports = getCentury;
