@@ -4,6 +4,14 @@
   An empty array should return false.
 */
 
-function areOrdered() {}
+function areOrdered(arr) {
+  const sortFunc = (a, b) => a - b;
+
+  const sorted = [...arr].sort(sortFunc).toString();
+
+  if (arr.length === 0) return false;
+  if (arr.toString() === sorted) return true;
+  if (arr.toString() !== sorted) return false;
+}
 
 module.exports = areOrdered;
