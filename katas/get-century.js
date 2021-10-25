@@ -7,8 +7,20 @@
 */
 
 function getCentury(year) {
-  if (year.toString().length < 3) return "1st";
-  // if (year.length === 4)
+  const yearStr = (year + 100).toString();
+
+  const sliceNo = yearStr.length === 4 ? 2 : 3;
+
+  const century = yearStr.slice(0, sliceNo);
+  let suffix = "th";
+
+  if (century.charAt(century.length - 1) === "1") suffix = "st";
+  if (century.charAt(century.length - 1) === "2") suffix = "nd";
+  if (century.charAt(century.length - 1) === "3") suffix = "rd";
+
+  if (century === "11" || century === "12" || century === "13") suffix = "th";
+
+  return `${century}${suffix}`;
 }
 
 module.exports = getCentury;
