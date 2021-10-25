@@ -23,9 +23,7 @@ should return:
 function orderVeg(vegArr) {
   const sortFunc = (a, b) => a.quantity - b.quantity;
 
-  const result = vegArr.sort(sortFunc);
-
-  return result;
+  return vegArr.sort(sortFunc);
 }
 
 module.exports = orderVeg;
