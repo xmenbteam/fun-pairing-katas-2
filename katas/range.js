@@ -6,8 +6,19 @@
   E.g. range(5) --> [0, 1, 2, 3, 4]
   range(5, 2) --> [2, 3, 4, 5, 6]
   range(5, 2, 2) --> [2, 4, 6, 8, 10]
+
+
+  (length * step) + start
 */
 
-function range() {}
+function range(length, start = 0, step = 1) {
+  if (length === 0) return [];
+  const result = [];
+  const end = length * step + start;
+  for (let i = start; i < end; i += step) {
+    result.push(i);
+  }
+  return result;
+}
 
 module.exports = range;
