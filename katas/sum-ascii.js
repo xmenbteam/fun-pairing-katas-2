@@ -5,14 +5,21 @@
 
 function sumAscii(arr) {
   if (arr.length === 0) return 0;
-  let highestName = 0;
-  for (let i in arr) {
-    let nameTotal = 0;
-    for (let j in arr[i]) {
-      nameTotal += arr[i].charCodeAt(j);
+
+  const nameScore = (name) => {
+    let score = 0;
+    for (let i in name) {
+      score += name.charCodeAt(i);
     }
+    return score;
+  };
+
+  let highestName = 0;
+  arr.forEach((name) => {
+    const nameTotal = nameScore(name);
     if (nameTotal > highestName) highestName = nameTotal;
-  }
+  });
+
   return highestName;
 }
 
