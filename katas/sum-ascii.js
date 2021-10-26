@@ -3,6 +3,17 @@
   E.g. the name 'John' would get the score 431 because 'j' has the ASCII code 106, 'o' has the ASCII code 111, 'h' has the ASCII code 104 and 'n' has the ASCII code 110.
 */
 
-function sumAscii() {}
+function sumAscii(arr) {
+  if (arr.length === 0) return 0;
+  let highestName = 0;
+  for (let i in arr) {
+    let nameTotal = 0;
+    for (let j in arr[i]) {
+      nameTotal += arr[i].charCodeAt(j);
+    }
+    if (nameTotal > highestName) highestName = nameTotal;
+  }
+  return highestName;
+}
 
 module.exports = sumAscii;
