@@ -11,7 +11,7 @@
 function checkStudents(students, cohort) {
   if (students.length === 0 || cohort.length === 0) return false;
 
-  for (student of students) {
+  for (let student of students) {
     if (student.cohort !== cohort) return false;
   }
   return true;
