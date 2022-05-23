@@ -14,6 +14,14 @@
 
 function getDistinctLetters(strOne, strTwo) {
   if (!strOne || !strTwo) return "";
+  function getDistinctLetters(str1, str2) {
+    const result = [];
+
+    for (let letter of str1) if (!str2.includes(letter)) result.push(letter);
+    for (let letter of str2) if (!str1.includes(letter)) result.push(letter);
+
+    return result.sort().join("");
+  }
 
   const combined = strOne + strTwo;
 
