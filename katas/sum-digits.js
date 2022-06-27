@@ -7,6 +7,12 @@
     --> 6
 */
 
-function sumDigits() {}
+function sumDigits(num) {
+  if (!num) return 0;
+  return [...num.toString()].reduce((acc, num) => {
+    if (parseInt(num)) acc += parseInt(num);
+    return acc;
+  }, 0);
+}
 
 module.exports = sumDigits;

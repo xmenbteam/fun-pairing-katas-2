@@ -3,11 +3,10 @@
 */
 
 function removeDuplicates(arr) {
-  if (arr.length === 0) return arr;
-  const result = arr.filter((el, i) => {
+  if (!arr.length) return arr;
+  return arr.filter((el, i) => {
     if (arr.lastIndexOf(el) === i) return el;
   });
-  return result;
 }
 
 module.exports = removeDuplicates;

@@ -12,6 +12,13 @@
   }
 */
 
-function getFrequencies() {}
+function getFrequencies(str) {
+  return [...str].reduce((result, char) => {
+    if (/[a-z]/i.test(char)) {
+      result[char] ? result[char]++ : (result[char] = 1);
+    }
+    return result;
+  }, {});
+}
 
 module.exports = getFrequencies;

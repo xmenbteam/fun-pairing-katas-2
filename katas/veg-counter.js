@@ -13,11 +13,10 @@
 */
 
 function countVeg(vegList, vegType) {
-  let count = 0;
-  for (let i in vegList) {
-    if (vegList[i].type === vegType) count += vegList[i].quantity;
-  }
-  return count;
+  return vegList.reduce((count, { type, quantity }) => {
+    if (type === vegType) count += quantity;
+    return count;
+  }, 0);
 }
 
 module.exports = countVeg;

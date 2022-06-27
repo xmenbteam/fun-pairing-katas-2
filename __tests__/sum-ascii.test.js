@@ -13,13 +13,13 @@ describe("sum ascii", () => {
     const actualOutput = sumAscii(input);
     expect(actualOutput).toBe(expectedOutput);
   });
-  test("returns the sum of ascii in a string", () => {
+  test("returns the highest of 2", () => {
     const input = ["Sam", "San"];
     const expectedOutput = 290;
     const actualOutput = sumAscii(input);
     expect(actualOutput).toBe(expectedOutput);
   });
-  test("returns the sum of ascii in a string", () => {
+  test("returns the highest of 3", () => {
     const input = ["Sam", "San", "Sao"];
     const expectedOutput = 291;
     const actualOutput = sumAscii(input);

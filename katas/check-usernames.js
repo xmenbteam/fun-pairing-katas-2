@@ -7,10 +7,11 @@
 */
 
 function checkUsernames(userArr) {
-  if (userArr.length === 0) return false;
-  const userRegex = /^[a-z0-9_]{5,20}$/;
-  for (let i in userArr) if (!userRegex.test(userArr[i])) return false;
-  return true;
+  if (!userArr.length) return false;
+  return userArr.reduce((flag, user) => {
+    if (!/^[a-z0-9_]{5,20}$/.test(user) || !user) flag = false;
+    return flag;
+  }, true);
 }
 
 module.exports = checkUsernames;

@@ -4,21 +4,19 @@
 */
 
 function max(arr) {
-  if (arr.length === 0) return 0;
-  let max = arr[0];
-  for (let i in arr) {
-    if (arr[i] > max) max = arr[i];
-  }
-  return max;
+  if (!arr.length) return 0;
+  return arr.reduce((max, curr) => {
+    if (curr > max) max = curr;
+    return max;
+  }, -Infinity);
 }
 
 function min(arr) {
-  if (arr.length === 0) return 0;
-  let min = arr[0];
-  for (let i in arr) {
-    if (arr[i] < min) min = arr[i];
-  }
-  return min;
+  if (!arr.length) return 0;
+  return arr.reduce((max, curr) => {
+    if (curr < max) max = curr;
+    return max;
+  }, Infinity);
 }
 
 module.exports = { max, min };
