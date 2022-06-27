@@ -3,20 +3,8 @@
   If the array has no items, you should return 0.
 */
 
-function max(arr) {
-  if (!arr.length) return 0;
-  return arr.reduce((max, curr) => {
-    if (curr > max) max = curr;
-    return max;
-  }, -Infinity);
-}
+const max = (arr) => (arr.length ? Math.max(...arr) : 0);
 
-function min(arr) {
-  if (!arr.length) return 0;
-  return arr.reduce((max, curr) => {
-    if (curr < max) max = curr;
-    return max;
-  }, Infinity);
-}
+const min = (arr) => (arr.length ? Math.min(...arr) : 0);
 
 module.exports = { max, min };
