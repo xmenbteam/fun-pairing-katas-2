@@ -7,18 +7,28 @@
 */
 
 function getCentury(year) {
-  const yearStr = (year + 100).toString();
+  if (year === 10000) return "101st";
 
-  const sliceNo = yearStr.length === 4 ? 2 : 3;
+  let suffix;
+  const century = Math.floor(year / 100) + 1;
+  const decade = century % 100;
 
-  const century = yearStr.slice(0, sliceNo);
-  let suffix = "th";
-
-  if (century.charAt(century.length - 1) === "1") suffix = "st";
-  if (century.charAt(century.length - 1) === "2") suffix = "nd";
-  if (century.charAt(century.length - 1) === "3") suffix = "rd";
-
-  if (century === "11" || century === "12" || century === "13") suffix = "th";
+  switch ((century, decade)) {
+    case century === 11 || century === 12 || century === 13:
+      suffix = "th";
+      break;
+    case decade === 1:
+      suffix = "st";
+      break;
+    case decade === 2:
+      suffix = "nd";
+      break;
+    case decade === 3:
+      suffix = "rd";
+      break;
+    default:
+      suffix = "th";
+  }
 
   return `${century}${suffix}`;
 }

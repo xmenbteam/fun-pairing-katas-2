@@ -9,7 +9,9 @@
 function checkUsernames(userArr) {
   if (!userArr.length) return false;
   return userArr.reduce((flag, user) => {
-    if (!/^[a-z0-9_]{5,20}$/.test(user) || !user) flag = false;
+    if (!/^[a-z0-9_]{5,20}$/.test(user) || !user) {
+      flag = false;
+    }
     return flag;
   }, true);
 }

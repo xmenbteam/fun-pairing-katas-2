@@ -1,109 +1,58 @@
 const getCentury = require("../katas/get-century");
 
-console.log("TEST 1 - returns an empty string with a number");
-
-let input = 1000;
-let expectedOutput = "11th";
-let actualOutput = getCentury(input);
-
-console.log(
-  `I expect ${JSON.stringify(actualOutput)} to equal ${JSON.stringify(
-    expectedOutput
-  )} \n`
-);
-
-console.log("TEST 2 - returns 20th with 1998");
-
-input = 1998;
-expectedOutput = "20th";
-actualOutput = getCentury(input);
-
-console.log(
-  `I expect ${JSON.stringify(actualOutput)} to equal ${JSON.stringify(
-    expectedOutput
-  )} \n`
-);
-
-console.log("TEST 3 - returns 21st");
-
-input = 2000;
-expectedOutput = "21st";
-actualOutput = getCentury(input);
-
-console.log(
-  `I expect ${JSON.stringify(actualOutput)} to equal ${JSON.stringify(
-    expectedOutput
-  )} \n`
-);
-
-console.log("TEST 3 - returns 22nd");
-
-input = 2100;
-expectedOutput = "22nd";
-actualOutput = getCentury(input);
-
-console.log(
-  `I expect ${JSON.stringify(actualOutput)} to equal ${JSON.stringify(
-    expectedOutput
-  )} \n`
-);
-
-console.log("TEST 3 - returns 23rd");
-
-input = 2200;
-expectedOutput = "23rd";
-actualOutput = getCentury(input);
-
-console.log(
-  `I expect ${JSON.stringify(actualOutput)} to equal ${JSON.stringify(
-    expectedOutput
-  )} \n`
-);
-
-console.log("TEST 3 - returns 11th");
-
-input = 1000;
-expectedOutput = "11th";
-actualOutput = getCentury(input);
-
-console.log(
-  `I expect ${JSON.stringify(actualOutput)} to equal ${JSON.stringify(
-    expectedOutput
-  )} \n`
-);
-
-console.log("TEST 3 - returns 12th");
-
-input = 1100;
-expectedOutput = "12th";
-actualOutput = getCentury(input);
-
-console.log(
-  `I expect ${JSON.stringify(actualOutput)} to equal ${JSON.stringify(
-    expectedOutput
-  )} \n`
-);
-
-console.log("TEST 3 - returns 12th");
-
-input = 1200;
-expectedOutput = "13th";
-actualOutput = getCentury(input);
-
-console.log(
-  `I expect ${JSON.stringify(actualOutput)} to equal ${JSON.stringify(
-    expectedOutput
-  )} \n`
-);
-
-console.log("TEST 3 - returns 101st");
-
-input = 10000;
-expectedOutput = "101st";
-actualOutput = getCentury(input);
-
-console.log(
-  `I expect ${JSON.stringify(actualOutput)} to equal ${JSON.stringify(
-    expectedOutput
-  )} \n`
-);
+describe("getCentury", () => {
+  test("TEST 1 - returns an empty string with a number ", () => {
+    const input = 1000;
+    const expectedOutput = "11th";
+    const actualOutput = getCentury(input);
+    expect(actualOutput).toBe(expectedOutput);
+  });
+  test("TEST 2 - returns 20th with 1998", () => {
+    const input = 1998;
+    const expectedOutput = "20th";
+    const actualOutput = getCentury(input);
+    expect(actualOutput).toBe(expectedOutput);
+  });
+  test.only("TEST 3 - returns 21st", () => {
+    const input = 2000;
+    const expectedOutput = "21st";
+    const actualOutput = getCentury(input);
+    expect(actualOutput).toBe(expectedOutput);
+  });
+  test("TEST 3 - returns 22nd", () => {
+    const input = 2100;
+    const expectedOutput = "22nd";
+    const actualOutput = getCentury(input);
+    expect(actualOutput).toBe(expectedOutput);
+  });
+  test("TEST 3 - returns 23rd", () => {
+    const input = 2200;
+    const expectedOutput = "23rd";
+    const actualOutput = getCentury(input);
+    expect(actualOutput).toBe(expectedOutput);
+  });
+  test("TEST 3 - returns 11th", () => {
+    const input = 1000;
+    const expectedOutput = "11th";
+    const actualOutput = getCentury(input);
+    expect(actualOutput).toBe(expectedOutput);
+  });
+  test("TEST 3 - returns 12th", () => {
+    const input = 1100;
+    const expectedOutput = "12th";
+    const actualOutput = getCentury(input);
+    expect(actualOutput).toBe(expectedOutput);
+  });
+  test("TEST 3 - returns 12th", () => {
+    const input = 1200;
+    const expectedOutput = "13th";
+    const actualOutput = getCentury(input);
+    expect(actualOutput).toBe(expectedOutput);
+  });
+  test("TEST 3 - returns 101st", () => {
+    const input = 10000;
+    const expectedOutput = "101st";
+    const actualOutput = getCentury(input);
+    expect(actualOutput).toBe(expectedOutput);
+  });
+});
